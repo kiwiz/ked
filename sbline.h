@@ -16,5 +16,6 @@ sbline* sbline_init(sbline* l, sbline* r, str* s);
 void sbline_free(sbline* line, bool recurse);
 void sbline_prepend(sbline* line, sbline* other);
 void sbline_append(sbline* line, sbline* other);
+bool sbline_merge_next(sbline* line);
 
 #endif

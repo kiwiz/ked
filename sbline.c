@@ -43,3 +43,19 @@ void sbline_append(sbline* line, sbline* other) {
     line->r = other;
     other->l = line;
 }
+
+bool sbline_merge_next(sbline* line) {
+    if(line->r == NULL) {
+        return true;
+    }
+    if(!str_append(line->s, line->r->s->data, line->r->s->len)) {
+        return false;
+    }
+    sbline* n = line->r->r;
+    sbline_free(line->r, false);
+    line->r = n;
+    if(n != NULL) {
+        n->l = line;
+    }
+    return true;
+}

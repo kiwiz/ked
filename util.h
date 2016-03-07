@@ -1,10 +1,8 @@
-#ifndef _util
-#define _util
+#ifndef k_util
+#define k_util
 
 #include <stdbool.h>
 
-bool iscrlf(char b) {
-    return b == '\r' || b == '\n';
-}
+bool iscrlf(char b);
 
 #endif
