@@ -6,7 +6,7 @@ sbuf* sbuf_init(char* fn) {
         return NULL;
     }
 
-    int fd = open(fn, O_RDWR | O_CREAT);
+    int fd = open(fn, O_RDWR | O_CREAT, S_IRUSR | S_IRGRP | S_IROTH);
     if(fd == -1) {
         free(sb);
         return NULL;
